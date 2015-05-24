@@ -1,0 +1,134 @@
+.\"
+.\"    this file is part of: wmblob
+.\"
+.\"    the GNU GPL license applies to this file, see file COPYING for details.
+.\"    author: gürkan sengün and jean-luc herren.
+.\"
+.\"
+.\" this man page is mainly made of some of the section
+.\" also found in the file README.
+.\"
+.\" groff -man -Tascii wmblob.1
+.\"
+.TH WMBLOB 1 "FEBRUARY 2004" Linux "User Manuals"
+.SH NAME
+wmblob \- a WindowMaker dockapp
+.SH SYNOPSIS
+.B wmblob
+[
+.I --help
+|
+.I --version
+]
+.SH DESCRIPTION
+(This manpage is mainly made of sections found in the file README
+coming with the wmblob tarball.)
+.PP
+I'll be honest with you.  The truth is:
+.I wmblob
+is a totally useless program.  But unlike other totally useless
+programs (I won't name them here, because they're made by an
+enormous and rich company), it looks good and shows funny moving
+`blobs'.  I'm sure you'll like it.  It's a nice dockapp for
+WindowMaker (see `www.windowmaker.org'), but it's probably going
+to run just as well with any other window manager.
+.SH OPTIONS
+Note: The command line options for setting the colors have been
+removed.
+.TP
+\fB\-b\fR, \fB\--broken-wm\fR
+Handle broken window managers.  Some of them seems to need it, but
+--windowed might be the better solution.
+.TP
+\fB\-w\fR, \fB\--windowed\fR
+Run in a window.
+.TP
+\fB\-d dp\fR, \fB\--display dp\fR
+Use the given display.
+.TP
+\fB\-h\fR, \fB\--help\fR
+Print a short help message.
+.TP
+\fB\-v\fR, \fB\--version\fR
+Print version informations.
+.SH HOW TO USE IT
+Simply start it and watch it.  Nice, eh?
+
+What?  Don't see anything?  Try giving the `--broken-wm' or
+`--windowed' options to
+.I wmblob.
+    
+Clicking in the window will open a dialog with lots of options.
+(You can't change the colors anymore by clicking with different
+buttons, like in older versions.)  All these settings change the
+way
+.I wmblob
+behaves.  Sorry, I won't describe all of them here; you can find
+it out yourself by fiddling around.  You can look at some examples
+by loading the presets.  Select a preset from the dropdown menu,
+click `load' and then `apply'.
+.PP
+.I wmblob
+saves it's settings and presets in the file .wmblobrc in your home
+directory.  you should not edit this file unless you really know
+what you're doing.
+.I wmblob
+may crash if the file is not set up properly.  if you've messed
+things up, simply delete this file,
+.I wmblob
+will recreate it with the default settings.
+.SH CPU USAGE
+Being nothing more than a toy (a nice toy),
+.I wmblob
+cannot be tolerated to use too much of your cpu.  While the amount of cpu time
+required by
+.I wmblob
+is small (less than 1/2%) with the default settings on modern machines, it can
+use considerable cpu time (maybe 10%) on older and slow machines with heavy
+settings (lots of blobs).  It's your choice to run
+.I wmblob
+or not.  Also consider to nice it.
+.SH COPYRIGHT
+.I wmblob
+is copyright by jean-luc herren.  The GPL version 2 (or newer, if
+desired) applies to all portions of the code I wrote.  If you
+don't know the GPL, please see the file COPYING in the root of the
+source tree or go to `www.gnu.org'.
+.PP
+The file wmlessgeneral.c has been taken from wmgeneral.c by
+Martijn Pieterse (pieterse at xs4all dot nl).  wmblob.c was
+originally derived from wmdots.c from `wmdots' by Mark I Manning
+IV (?), but there's nothing left from his original code.
+.SH AUTHOR
+.I wmblob
+was written by Jean-Luc Herren.  (jlh at gmx dot ch)
+.SH BUG REPORTS
+Bugs?  Where?  Well, if you find one or have some comments,
+questions or problems or feel like saying hello, feel free to send
+me an e-mail (jlh at gmx dot ch).  Warning: If you spam me, I'll
+remote activate
+.I wmblob
+to delete all your precious data and to break you a leg.
+.SH KNOWN BUGS
+None.  Unless you tell me about one.  I run it permanently on my
+machine and never encountered any problems.
+.SH THANKS
+Thanks to other people who wrote dockapps, I read some of their
+sources.  Especially: wmdots, wmMand and wmgeneral.
+.PP
+Thanks to Thomas Otto, for his patch, for command line args.
+.PP
+Thanks to Gürkan Sengün (gurkan at linuks dot mine dot nu), for
+making a Debian package and writing the initial manpage.
+.PP
+Thanks to Arthur Melissen for the help with FreeBSD.
+.PP
+And thanks to all the people, who dropped me an email!  It's nice
+to hear that you like it!  :)
+.SH SEE ALSO
+The WindowMaker homepage: `www.windowmaker.org'.  The DockApp
+homepage: `www.dockapps.org'.  See also the file `README' and the
+file `doc/how_it_works' if you're curious.  Both are included with
+the wmblob source tarball.
+.PP
+.BR wmaker (1)

@@ -1,0 +1,132 @@
+
+------------------------------------------------------------------
+                           How it works
+------------------------------------------------------------------
+
+  This is a cheap description for those who are interested in
+  `how it works'.  Excuse my bad english.  If you have comments,
+  questions (or corrections), drop my an email.
+
+  I took the expression `blob' from the Persistence of Vision
+  Raytracer (www.povray.org).  There's an object called blob
+  useful for modelling organic shapes.  It has much in common
+  with my blobs.
+
+  A blob is just a simple function, and looks somewhat like
+  this:
+
+    ^(intensity)
+    |                  -------------->
+    |                  -->           .
+    +...............******..................................
+    |               *    *           .
+    |               *    *           .
+    |              *     .*          .
+    |              *     .*          .
+    |             *      . *         .
+    |            *       .  *        .
+    |          **        .   **      .
+    |       ***          .     ***   .
+    |   ****             .        ****               (location)
+    0***-----------------+-----------+**********************->
+
+  Of course, this is just a blob in one dimension, I think you
+  will understand, what a blob looks like in two dimensions.
+  (Drawing 3-D AsciiArt pictures by hand is over my skills.)
+
+  The vertical axis is the intensity at the given location of
+  the blob.  The horizontal dotted line shows the maximal
+  intensity, which means `white' in the default color settings.
+
+  The small arrow shows the radius of that `plateau' with maximal
+  intensity, the big arrow is the falloff radius.  Between those
+  two radii the intensity drops from the maximum to zero and
+  remains zero outside the falloff radius.  (Which is not really
+  nessessary, but it's easier, because this way the blobs have a
+  finite size.)
+
+  Now it s time, to put two blobs near to each other:
+
+    ^
+    +...............******............%%%%%%................
+    |               *    *            %    %
+    |               *    *            %    %
+    |              *      *          %      %
+    |              *      *          %      %
+    |             *        *        %        %
+    |            *          *      %          %
+    |          **            **  %%            %%
+    |       ***               %##*               %%%
+    |   ****              %%%%    ****              %%%%
+    0###%%%%%%%%%%%%%%%%%%------------******************###*->
+
+  We simply add together the values of the two blobs, at every
+  point of the picture:
+
+    ^
+    +...............******............%%%%%%................
+    |               *    *            %    %
+    |               *     +          +     %
+    |              *      +         +       %
+    |              *       +        +       %
+    |             *         ++    ++         %
+    |            *            ++++            %
+    |          **                              %%
+    |       ***                                  %%%
+    |   ****                                        %%%%
+    0***------------------------------------------------%%%%->
+
+  This gives a glued-together-impression, because the
+  intensity does not reach zero between the blobs.
+
+  If we put the blobs even closer together, we will have
+  something like this:
+
+    ^
+    +...............+++++++...+++++++.......................
+    |               +      + +      +
+    |               +       +       +
+    |              +                 +
+    |              +                 +
+    |             *                   *
+    |            *                     *
+    |          **                       **
+    |       ***                           ***
+    |   ****                                 ****
+    0***-----------------------------------------***********->
+
+  There's only a small gap left between the blobs.  They're hard
+  to distinguish.
+
+  Note: We can't have intensities beyond the dotted line,
+  because it represents the maximum intensity.  So if the sum is
+  above it, we have to clamp it.
+
+  Now let's put the two blobs at the same place:
+
+    ^
+    +.............**********................................
+    |             *        *
+    |            *          *
+    |            *          *
+    |           *            *
+    |          *              *
+    |        **                **
+    |       *                    *
+    |     **                      **
+    |   **                          **
+    0***------------------------------**********************->
+
+  It looks like one big blob!  Voilà, it's as simple as this.
+
+  Ok, no, it's not the whole truth.  All I have explained is the
+  first blob animation I ever made, but wmblob is a bit more
+  complicated.
+
+  ...to be continued...  :)
+
+
+
+                            -- Jean-Luc Herren, jlh at gmx dot ch.
+
+# vi:set ai tw=66:
