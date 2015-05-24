@@ -2,6 +2,8 @@ aclocal.m4
 autoconf.h
 autoconf.h.in
 autoconf.h.in~
+config.h.in
+config.h.in~
 autom4te.cache/
 ChangeLog
 config.log
