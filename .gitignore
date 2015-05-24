@@ -2,6 +2,7 @@ aclocal.m4
 autoconf.h
 autoconf.h.in
 autoconf.h.in~
+config.h
 config.h.in
 config.h.in~
 autom4te.cache/
@@ -14,6 +15,7 @@ cscope.*
 .deps/
 Makefile
 Makefile.in
+wmblob
 *.o
 scripts/
 stamp-h*
