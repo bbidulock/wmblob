@@ -27,3 +27,4 @@ depcomp
 install-sh
 mkinstalldirs
 missing
+compile
