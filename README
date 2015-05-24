@@ -1,0 +1,182 @@
+
+------------------------------------------------------------------
+                              README
+------------------------------------------------------------------
+
+                          wmblob v1.0.3
+
+general information
+-------------------
+
+    I'll be honest with you.  the truth is: wmblob is a totally
+    useless program.  but unlike other totally useless programs (I
+    won't name them here, because they're made by an enormous and
+    rich company), it looks good and shows funny moving `blobs'.
+    I'm sure you'll like it.  it's a nice dockapp for WindowMaker
+    (see `www.windowmaker.org'), but it's probably going to run
+    just as well with any other window manager.
+
+
+supported platforms:
+--------------------
+
+    I have no idea.  go and find it out.  I wrote it on `bender',
+    which is my i686-pc-linux-gnu system.  this means it compiles
+    and runs well on *my* machine and I hope it will do so on your
+    machine, too, but I'm unable to test it on other platforms.
+    all comments related to the portability of this program are
+    welcome, especially for non-linux platforms.
+
+    Arthur Melissen sent me an email and pointed out some
+    modifications he did to make it properly work on FreeBSD.
+    those modifications were included in version 1.0.2 and 1.0.3.
+
+    if wmblob fails to compile or to run on your machine and you
+    are a smart person (meaning: not working for an enormous and
+    rich company), try to find out what the problem is by looking
+    at the source and/or config files.  if you're unable to do
+    this, you can still try to drop me an e-mail with *useful*
+    informations, but I can't promise that I'll be able to help
+    you.  also, if you fix some compatibility problems, tell me
+    about it.
+
+    wmblob is mainly written for WindowMaker.  other window
+    manager may work just as well, because I don't use any
+    extension unique to WindowMaker, but I can't tell for sure.  I
+    have tried to run it with old verions of twm, mwm, wm2 and
+    icewm.  all four managers work only by giving `--windowed' or
+    `--broken-wm' to wmblob at startup.
+
+
+requirements:
+-------------
+
+    I can't tell for sure what is required, but here's a list:
+      + a working compiler and all that goes with that
+      + GTK+-2 (can't tell which version, but upgrading to the
+        newest major version is a good idea anyway.)
+      + An X11 system with the following libraries: X11, Xext, Xpm
+
+
+installation:
+-------------
+
+    installing wmblob should be trivial by simply following the
+    usual installation steps, beginning with `./configure'.   read
+    the `requirements' (just above).
+
+    if this does not ring a bell to you, do the following:
+      + unpack the archive and enter the source tree
+      + type `./configure' with your favourite options (type
+        `./configure --help' to get a list)
+      + type `make' to compile
+      + type `make install' to install.  for this you'll have to
+        be root, unless you install it locally by giving a local
+        path to configure (with `--prefix=path').
+      + to clean type `make clean'.  or simply delete the source
+        tree
+
+
+how to use it:
+--------------
+
+    simply start it and watch it.  nice, eh?
+
+    what?  don't see anything?  try giving the `--broken-wm' or
+    `--windowed' options to wmblob.
+
+    clicking in the window will open a dialog with lots of
+    options.  (you can't change the colors anymore by clicking
+    with different buttons, like in older versions.)  all these
+    settings change the way wmblob behaves.  sorry, I won't
+    describe all of them here; you can find it out yourself by
+    fiddling around.  you can look at some examples by loading the
+    presets.  select a preset from the dropdown menu, click `load'
+    and then `apply'.
+
+    the command line options for setting the colors have been
+    removed.
+
+    wmblob saves its settings and presets in the file `.wmblobrc'
+    in your home directory.  you should not edit this file unless
+    you really know what you're doing.  wmblob may crash if the
+    file is not set up properly.  if you've messed things up,
+    simply delete this file, wmblob will recreate it with the
+    default settings.
+
+
+how does it work?
+-----------------
+
+    some people asked me, how wmblob works.  that's why I have
+    included the file `doc/how_it_works'.
+
+
+cpu usage
+---------
+
+    being nothing more than a toy (a nice toy), wmblob cannot be
+    tolerated to use too much of your cpu.  while the amount of
+    cpu time required by wmblob is small (less than 1/2%) with the
+    default settings on modern machines, it can use considerable
+    cpu time (maybe 10%) on older and slow machines with heavy
+    settings (lots of blobs).  it's your choice whether to run
+    wmblob or not.  also consider to `nice' it.
+
+
+copyright
+---------
+
+    wmblob is copyright by jean-luc herren.  the GPL version 2 (or
+    newer, if desired) applies to all portions of the code that I
+    wrote.  if you don't know the GPL, please see the file COPYING
+    in the root of the source tree or go to `www.gnu.org'.
+
+    the file `wmlessgeneral.c' has been taken from wmgeneral.c by
+    Martijn Pieterse (pieterse at xs4all dot nl).  `wmblob.c' was
+    originally derived from `wmdots.c' from `wmdots' by Mark I
+    Manning IV (?), but there's nothing left from his original
+    code.  it was just the starting point.
+
+
+author
+------
+
+    wmblob was written by jean-luc herren.  (jlh at gmx dot ch)
+
+
+bug reports
+-----------
+
+    bugs?  where?  well, if you find one or have some comments,
+    questions or problems or feel like saying hello, feel free to
+    send me an e-mail (jlh at gmx dot ch).  warning: if you spam
+    me, I'll remote activate wmblob to delete all your precious
+    data and to break you a leg.  :)
+
+
+known bugs
+----------
+
+    none.  unless you tell me about one.  I run it permanently on
+    my machine and never encountered any problems.
+
+
+thanks
+------
+
+    thanks to many other people who wrote dockapps, I read some of
+    their sources.  especially: wmdots, wmMand and wmgeneral.
+
+    thanks to Thomas Otto for his patch for command line args.
+
+    thanks to Gürkan Sengün, for making a Debian package and
+    writing the initial manpage.
+
+    thanks to Arthur Melissen for the help with FreeBSD.
+
+    ...and thanks to all the people, who dropped me an email!
+    it's nice to hear that you like it!  :)
+
+
+# vi:set ai tw=66:

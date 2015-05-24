@@ -17,10 +17,6 @@ scripts/
 stamp-h*
 .*.sw[nop]
 *.tar.*
-INSTALL
-README
-NEWS
-AUTHORS
 _install
 *.log
 config.guess
